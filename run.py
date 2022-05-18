@@ -1,8 +1,14 @@
-from Parser import Parser
+from newParser import Parser
 
 if __name__ == "__main__":
-    input_string = '{x = -1 > (p and (1**(-p) = abs(-1))) ;x=p**p ;;x=p}'
-    # input_string = '{x = -1 mul p / 1 rem p; ; ; x = p + 1 ** 1 + not p }{;}'
-    input_string = input_string.replace(' ', '')
-    print('Входная цепочка: ' + input_string + '\n')
-    parser = Parser(input_string)
+
+    # input = '{ a := 3 ; aaa := p ; { a := p ; x := p and not p } }'
+    # input = '{ a := ( abs p and ( 1 ** 25 ) ) }'
+    # input = '{ a? := 1 and - ( + p and 1 ** 2 ** 455 ) }'
+    # input = '{ c := not ( p mod 5 / ( 2 + 2 ) ) }'
+    # input = '{ c := abs ( - p + 2 & 4 mod 5 / ( 2 ) ) }'
+    input = '{ ll := ( p and - 22 ) }'
+    input = list(input.strip().split())
+    print('Tokens')
+    print(input)
+    parser = Parser(input)
